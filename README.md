@@ -19,4 +19,6 @@ and open-source hardare by purchasing by purchasing products from Adafruit!
 * SP1: https://www.adafruit.com/product/160
 * Terminal Block: https://www.adafruit.com/product/724
 * feather headers: https://www.adafruit.com/product/3002
+* Door Sensor: https://www.adafruit.com/product/375
+
 
