@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.2.2">
+<eagle version="9.1.3">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="50" unitdist="mil" unit="mm" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mm"/>
@@ -140,7 +141,7 @@
 </layers>
 <board>
 <plain>
-<text x="21.59" y="2.54" size="1.27" layer="25">Freezer Monitor Rev E</text>
+<text x="21.59" y="2.54" size="1.27" layer="25">Freezer Monitor Rev F</text>
 </plain>
 <libraries>
 <library name="led" urn="urn:adsk.eagle:library:259">
@@ -348,10 +349,14 @@ design rules under a new name.</description>
 <param name="slThermalsForVias" value="0"/>
 <param name="dpMaxLengthDifference" value="10mm"/>
 <param name="dpGapFactor" value="2.5"/>
-<param name="checkGrid" value="0"/>
 <param name="checkAngle" value="0"/>
 <param name="checkFont" value="1"/>
 <param name="checkRestrict" value="1"/>
+<param name="checkStop" value="0"/>
+<param name="checkValues" value="0"/>
+<param name="checkNames" value="1"/>
+<param name="checkWireStubs" value="1"/>
+<param name="checkPolygonWidth" value="0"/>
 <param name="useDiameter" value="13"/>
 <param name="maxErrors" value="50"/>
 </designrules>
@@ -485,7 +490,6 @@ design rules under a new name.</description>
 <signal name="GND">
 <contactref element="MS1" pad="4"/>
 <contactref element="SP1" pad="P$1"/>
-<wire x1="6.5532" y1="11.303" x2="6.39" y2="10.16" width="0.3048" layer="16"/>
 <contactref element="J1" pad="2"/>
 <wire x1="20.735" y1="7.917" x2="14.326" y2="1.508" width="0.5" layer="16"/>
 <wire x1="44.109" y1="7.917" x2="26.767" y2="7.917" width="0.5" layer="16"/>
@@ -493,11 +497,10 @@ design rules under a new name.</description>
 <wire x1="45.617" y1="9.425" x2="44.109" y2="7.917" width="0.5" layer="16"/>
 <wire x1="14.326" y1="1.508" x2="13.97" y2="1.27" width="0.5" layer="16"/>
 <wire x1="45.617" y1="9.425" x2="45.72" y2="9.73" width="0.5" layer="16"/>
-<wire x1="14.326" y1="19.227" x2="6.409" y2="11.31" width="0.5" layer="16"/>
-<wire x1="26.013" y1="19.227" x2="14.326" y2="19.227" width="0.5" layer="16"/>
 <wire x1="26.767" y1="18.473" x2="26.013" y2="19.227" width="0.5" layer="16"/>
 <wire x1="26.767" y1="7.917" x2="26.767" y2="18.473" width="0.5" layer="16"/>
-<wire x1="6.409" y1="11.31" x2="6.39" y2="10.16" width="0.5" layer="16"/>
+<wire x1="23.953" y1="19.227" x2="26.013" y2="19.227" width="0.5" layer="16"/>
+<wire x1="6.39" y1="10.16" x2="23.953" y2="19.227" width="0.5" layer="16"/>
 </signal>
 <signal name="N$3">
 <contactref element="MS1" pad="25"/>
@@ -514,22 +517,24 @@ design rules under a new name.</description>
 </signal>
 <signal name="N$6">
 <contactref element="MS1" pad="22"/>
-<contactref element="SP1" pad="P$2"/>
-<wire x1="24.505" y1="14.326" x2="31.668" y2="21.489" width="0.5" layer="1"/>
-<wire x1="24.505" y1="9.048" x2="24.505" y2="14.326" width="0.5" layer="1"/>
-<wire x1="24.128" y1="8.671" x2="24.505" y2="9.048" width="0.5" layer="1"/>
-<wire x1="12.818" y1="8.671" x2="24.128" y2="8.671" width="0.5" layer="1"/>
-<wire x1="11.687" y1="9.802" x2="12.818" y2="8.671" width="0.5" layer="1"/>
 <wire x1="31.668" y1="21.489" x2="31.75" y2="21.59" width="0.5" layer="1"/>
-<wire x1="11.687" y1="9.802" x2="11.39" y2="10.16" width="0.5" layer="1"/>
+<contactref element="SP1" pad="P$2"/>
+<wire x1="31.75" y1="21.59" x2="31.111" y2="20.951" width="0.5" layer="1"/>
+<wire x1="31.111" y1="20.951" x2="30.541" y2="20.951" width="0.5" layer="1"/>
+<wire x1="24.2022" y1="9.1130375" x2="23.9069625" y2="8.8178" width="0.5" layer="1"/>
+<wire x1="23.9069625" y1="8.8178" x2="19.7640375" y2="8.8178" width="0.5" layer="1"/>
+<wire x1="18.4218375" y1="10.16" x2="11.39" y2="10.16" width="0.5" layer="1"/>
+<wire x1="19.7640375" y1="8.8178" x2="18.4218375" y2="10.16" width="0.5" layer="1"/>
+<wire x1="30.541" y1="20.951" x2="24.2022" y2="14.6122" width="0.5" layer="1"/>
+<wire x1="24.2022" y1="14.6122" x2="24.2022" y2="9.1130375" width="0.5" layer="1"/>
 </signal>
 <signal name="N$5">
 <contactref element="MS1" pad="23"/>
 <contactref element="GRN" pad="K"/>
 <wire x1="36.569" y1="14.326" x2="36.569" y2="10.179" width="0.5" layer="16"/>
-<wire x1="29.406" y1="21.489" x2="36.569" y2="14.326" width="0.5" layer="16"/>
 <wire x1="36.569" y1="10.179" x2="36.83" y2="10.16" width="0.5" layer="16"/>
-<wire x1="29.406" y1="21.489" x2="29.21" y2="21.59" width="0.5" layer="16"/>
+<wire x1="29.21" y1="21.59" x2="36.474" y2="14.326" width="0.5" layer="16"/>
+<wire x1="36.474" y1="14.326" x2="36.569" y2="14.326" width="0.5" layer="16"/>
 </signal>
 <signal name="3V">
 <contactref element="MS1" pad="2"/>
@@ -538,9 +543,9 @@ design rules under a new name.</description>
 <wire x1="9.048" y1="1.508" x2="25.259" y2="17.719" width="0.5" layer="16"/>
 <wire x1="25.259" y1="17.719" x2="25.4" y2="17.78" width="0.5" layer="16"/>
 <wire x1="9.048" y1="1.508" x2="8.89" y2="1.27" width="0.5" layer="16"/>
-<wire x1="30.16" y1="13.572" x2="30.16" y2="17.719" width="0.5" layer="1"/>
-<wire x1="19.604" y1="3.016" x2="30.16" y2="13.572" width="0.5" layer="1"/>
-<wire x1="10.556" y1="3.016" x2="19.604" y2="3.016" width="0.5" layer="1"/>
+<wire x1="30.16" y1="9.762" x2="30.16" y2="17.719" width="0.5" layer="1"/>
+<wire x1="23.414" y1="3.016" x2="30.16" y2="9.762" width="0.5" layer="1"/>
+<wire x1="10.556" y1="3.016" x2="23.414" y2="3.016" width="0.5" layer="1"/>
 <wire x1="9.048" y1="1.508" x2="10.556" y2="3.016" width="0.5" layer="1"/>
 <wire x1="30.16" y1="17.719" x2="30.48" y2="17.78" width="0.5" layer="1"/>
 <wire x1="9.048" y1="1.508" x2="8.89" y2="1.27" width="0.5" layer="1"/>
@@ -569,12 +574,35 @@ design rules under a new name.</description>
 <wire x1="15.457" y1="17.719" x2="15.24" y2="17.78" width="0.5" layer="1"/>
 <wire x1="19.981" y1="10.179" x2="20.32" y2="10.16" width="0.5" layer="1"/>
 </signal>
+<signal name="USB">
+<contactref element="MS1" pad="26"/>
+<contactref element="MS1" pad="21"/>
+<wire x1="34.29" y1="21.59" x2="33.72" y2="21.59" width="0.5" layer="1"/>
+<wire x1="33.72" y1="21.59" x2="32.327" y2="20.197" width="0.5" layer="1"/>
+<wire x1="32.327" y1="20.197" x2="30.85331875" y2="20.197" width="0.5" layer="1"/>
+<wire x1="30.85331875" y1="20.197" x2="28.694" y2="18.03768125" width="0.5" layer="1"/>
+<wire x1="28.694" y1="18.03768125" x2="28.694" y2="12.17068125" width="0.5" layer="1"/>
+<wire x1="28.694" y1="12.17068125" x2="24.44031875" y2="7.917" width="0.5" layer="1"/>
+<wire x1="24.44031875" y1="7.917" x2="11.12418125" y2="7.917" width="0.5" layer="1"/>
+<wire x1="11.12418125" y1="7.917" x2="9.616" y2="9.42518125" width="0.5" layer="1"/>
+<wire x1="14.6840375" y1="19.1222" x2="19.1222" y2="19.1222" width="0.5" layer="1"/>
+<wire x1="19.1222" y1="19.1222" x2="21.59" y2="21.59" width="0.5" layer="1"/>
+<wire x1="9.616" y1="9.42518125" x2="9.616" y2="14.0541625" width="0.5" layer="1"/>
+<wire x1="9.616" y1="14.0541625" x2="14.6840375" y2="19.1222" width="0.5" layer="1"/>
+</signal>
 </signals>
+<mfgpreviewcolors>
+<mfgpreviewcolor name="soldermaskcolor" color="0xC8008000"/>
+<mfgpreviewcolor name="silkscreencolor" color="0xFFFEFEFE"/>
+<mfgpreviewcolor name="backgroundcolor" color="0xFF282828"/>
+<mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
+<mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
+</mfgpreviewcolors>
 </board>
 </drawing>
 <compatibility>
 <note version="8.2" severity="warning">
-Since Version 8.2, Eagle supports online libraries. The ids
+Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)
 with this version.
 </note>
